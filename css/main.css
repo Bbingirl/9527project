@@ -5,12 +5,12 @@
 
 #contentdiv {
     position: absolute;
-    left: 500px;
+    left: 0px;
 }
 
 #startdiv {
-    width: 320px;
-    height: 568px;
+    width: 1920px;
+    height: 965px;
     background-image: url(../image/开始背景.png);
 }
 
@@ -20,8 +20,8 @@ button {
 
 #startdiv button {
     position: absolute;
-    top: 500px;
-    left: 82px;
+    top: 800px;
+    left: 882px;
     width: 150px;
     height: 30px;
     border: 1px solid black;
@@ -30,8 +30,8 @@ button {
 }
 
 #maindiv {
-    width: 320px;
-    height: 568px;
+    width: 1920px;
+    height: 965px;
     background-image: url(../image/background_1.png);
     display: none;
 }
@@ -57,8 +57,8 @@ button {
 
 #suspenddiv {
     position: absolute;
-    top: 210px;
-    left: 82px;
+    top: 500px;
+    left: 880px;
     display: none;
     z-index: 2;
 }
@@ -74,8 +74,8 @@ button {
 
 #enddiv {
     position: absolute;
-    top: 210px;
-    left: 75px;
+    top: 500px;
+    left: 880px;
     border: 1px solid gray;
     border-radius: 5px;
     text-align: center;

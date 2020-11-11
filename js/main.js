@@ -123,7 +123,7 @@
     var yidong = function() {
             var oevent = window.event || arguments[0];
             var chufa = oevent.srcElement || oevent.target;
-            var selfplanX = oevent.clientX - 500;
+            var selfplanX = oevent.clientX ;
             var selfplanY = oevent.clientY;
             ourPlan.style.left = selfplanX - selfplan.plansizeX / 2 + "px";
             ourPlan.style.top = selfplanY - selfplan.plansizeY / 2 + "px";
@@ -164,7 +164,7 @@
             var oevent = window.event || arguments[0];
             var bodyobjX = oevent.clientX;
             var bodyobjY = oevent.clientY;
-            if (bodyobjX < 505 || bodyobjX > 815 || bodyobjY < 0 || bodyobjY > 568) {
+            if (bodyobjX < 0 || bodyobjX > 1875 || bodyobjY < 0 || bodyobjY > 925) {
                 if (document.removeEventListener) {
                     mainDiv.removeEventListener("mousemove", yidong, true);
                 } else if (document.detachEvent) {
@@ -231,7 +231,7 @@
     function start() {
         mainDiv.style.backgroundPositionY = backgroundPositionY + "px";
         backgroundPositionY += 0.5;
-        if (backgroundPositionY == 568) {
+        if (backgroundPositionY == 950) {
             backgroundPositionY = 0;
         }
         mark++;
@@ -239,20 +239,20 @@
         创建敌方飞机
          */
 
-        if (mark == 20) {
+        if (mark == 10) {
             mark1++;
             //中飞机
             if (mark1 % 5 == 0) {
-                enemys.push(new enemy(6, 25, 274, 46, 60, 5000, 360, random(1, 3), "image/中飞机爆炸.gif", "image/enemy3_fly_1.png"));
+                enemys.push(new enemy(6, -500, 2000, 46, 60, 5000, 360, random(1, 3), "image/中飞机爆炸.gif", "image/enemy3_fly_1.png"));
             }
             //大飞机
             if (mark1 == 20) {
-                enemys.push(new enemy(12, 57, 210, 110, 164, 30000, 540, 1, "image/大飞机爆炸.gif", "image/enemy2_fly_1.png"));
+                enemys.push(new enemy(12, -500, 2000, 110, 164, 30000, 540, 1, "image/大飞机爆炸.gif", "image/enemy2_fly_1.png"));
                 mark1 = 0;
             }
             //小飞机
             else {
-                enemys.push(new enemy(1, 19, 286, 34, 24, 1000, 360, random(1, 4), "image/小飞机爆炸.gif", "image/enemy1_fly_1.png"));
+                enemys.push(new enemy(1, -500, 2000, 34, 24, 1000, 360, random(1, 4), "image/小飞机爆炸.gif", "image/enemy1_fly_1.png"));
             }
             mark = 0;
         }
@@ -268,7 +268,7 @@
             /*
              如果敌机超出边界,删除敌机
              */
-            if (enemys[i].imagenode.offsetTop > 568) {
+            if (enemys[i].imagenode.offsetTop > 950) {
                 mainDiv.removeChild(enemys[i].imagenode);
                 enemys.splice(i, 1);
                 enemyslen--;
